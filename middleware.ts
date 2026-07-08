@@ -21,21 +21,17 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  // Preview mode: skip auth for /preview
-  if (request.nextUrl.pathname.startsWith("/preview")) {
-    return response;
-  }
-
-  const { data: { session } } = await supabase.auth.getSession();
+  // getUser() validates the JWT against Supabase — safer than getSession() in middleware
+  const { data: { user } } = await supabase.auth.getUser();
 
   // Redirect to login if not authenticated and not already on login page
-  if (!session && !request.nextUrl.pathname.startsWith("/login")) {
+  if (!user && !request.nextUrl.pathname.startsWith("/login")) {
     const redirectUrl = new URL("/login", request.url);
     return NextResponse.redirect(redirectUrl);
   }
 
   // Redirect to dashboard if authenticated and on login page
-  if (session && request.nextUrl.pathname.startsWith("/login")) {
+  if (user && request.nextUrl.pathname.startsWith("/login")) {
     const redirectUrl = new URL("/", request.url);
     return NextResponse.redirect(redirectUrl);
   }
