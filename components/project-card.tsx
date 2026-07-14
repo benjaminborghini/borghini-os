@@ -19,9 +19,9 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       >
         {/* Header */}
-        <div className="flex items-start justify-between mb-3">
+        <div className="flex items-start justify-between mb-3 gap-2">
           <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <span className="text-xs text-dark-muted font-mono">{project.project_id}</span>
               <span className="text-xs text-gold/60">{project.type}</span>
             </div>
@@ -34,15 +34,15 @@ export function ProjectCard({ project }: { project: Project }) {
 
         {/* Info grid */}
         <div className="grid grid-cols-2 gap-3 text-sm">
-          <div>
+          <div className="min-w-0">
             <p className="text-dark-muted text-xs mb-0.5">Slippdato</p>
-            <p className={cn("font-medium", getUrgencyColor(urgency))}>
+            <p className={cn("font-medium truncate", getUrgencyColor(urgency))}>
               {formatDate(project.release_date)}
             </p>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="text-dark-muted text-xs mb-0.5">Nedtelling</p>
-            <p className={cn("font-medium", getUrgencyColor(urgency))}>
+            <p className={cn("font-medium truncate", getUrgencyColor(urgency))}>
               {days === null ? "—" : days < 0 ? `${Math.abs(days)} dager forsinket` : `${days} dager`}
             </p>
           </div>
@@ -61,7 +61,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Urgency label */}
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between flex-wrap gap-y-2">
           <span className={cn("text-xs font-medium flex items-center gap-1.5", getUrgencyColor(urgency))}>
             <UrgencyEmblem size={14} />
             {getUrgencyLabel(urgency)}

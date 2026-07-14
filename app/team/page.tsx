@@ -62,9 +62,9 @@ export default async function TeamPage() {
                   key={member.id}
                   className="bg-dark-card border border-dark-border rounded-xl p-5"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-bold text-white">{member.name}</h3>
-                    <span className={`text-xs px-2 py-0.5 rounded ${roleColors[member.role]}`}>
+                  <div className="flex items-start justify-between mb-3 gap-2">
+                    <h3 className="font-bold text-white min-w-0 truncate">{member.name}</h3>
+                    <span className={`text-xs px-2 py-0.5 rounded flex-shrink-0 whitespace-nowrap ${roleColors[member.role]}`}>
                       {roleLabels[member.role]}
                     </span>
                   </div>

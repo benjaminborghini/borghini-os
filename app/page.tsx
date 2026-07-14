@@ -53,7 +53,7 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-y-2">
         <div>
           <h1 className="text-2xl font-bold text-white">Dashboard</h1>
           <p className="text-dark-muted text-sm mt-1">

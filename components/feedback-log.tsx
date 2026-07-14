@@ -161,16 +161,16 @@ export function FeedbackLog({ projectId }: { projectId: string }) {
             key={item.id}
             className="bg-dark-card border border-dark-border rounded-xl p-4"
           >
-            <div className="flex items-start justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-white">{item.sender}</span>
-                <span className="text-xs text-dark-muted">{timeAgo(item.created_at)}</span>
+            <div className="flex items-start justify-between mb-2 gap-2">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+                <span className="text-sm font-medium text-white truncate">{item.sender}</span>
+                <span className="text-xs text-dark-muted flex-shrink-0">{timeAgo(item.created_at)}</span>
               </div>
               <select
                 value={item.status}
                 onChange={(e) => updateStatus(item.id, e.target.value)}
                 className={cn(
-                  "text-xs rounded-md px-2 py-1 border-none cursor-pointer",
+                  "text-xs rounded-md px-2 py-1 border-none cursor-pointer flex-shrink-0",
                   statusColors[item.status]
                 )}
               >

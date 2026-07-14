@@ -16,6 +16,7 @@ body {
   font-family: var(--font-acumin);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
@@ -32,6 +33,12 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #333333;
+}
+
+/* iOS momentum scrolling for horizontal scroll containers */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 /* Input reset for dark theme */

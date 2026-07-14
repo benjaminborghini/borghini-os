@@ -38,7 +38,7 @@ export function AlertBanner({
       </span>
       <div className="flex-1 min-w-0">
         {title && <p className="font-medium text-sm">{title}</p>}
-        <p className="text-sm opacity-90">{message}</p>
+        <p className="text-sm opacity-90 break-words">{message}</p>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export function StatusBadge({ status }: { status: ProjectStatus }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium",
+        "inline-flex flex-shrink-0 items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap",
         colors.bg,
         colors.text
       )}

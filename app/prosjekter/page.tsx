@@ -44,7 +44,7 @@ export default async function ProjectsPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-y-2">
         <div>
           <h1 className="text-2xl font-bold text-white">Prosjekter</h1>
           <p className="text-dark-muted text-sm mt-1">{sorted.length} totalt</p>
@@ -59,7 +59,7 @@ export default async function ProjectsPage({
       </div>
 
       {/* Filter */}
-      <div className="flex gap-2 overflow-x-auto pb-2">
+      <div className="flex gap-2 overflow-x-auto pb-2 scroll-touch">
         {statuses.map((s) => (
           <Link
             key={s}

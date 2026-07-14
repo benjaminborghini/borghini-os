@@ -22,9 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="no" className={acumin.variable}>
       <body className="bg-black text-white antialiased">
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen overflow-x-hidden">
           <Sidebar />
-          <main className="flex-1 lg:ml-64 pb-20 lg:pb-8">
+          <main className="flex-1 lg:ml-64 pt-14 lg:pt-0 pb-20 lg:pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               {children}
             </div>

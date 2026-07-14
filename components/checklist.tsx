@@ -97,11 +97,11 @@ export function Checklist({ projectId }: { projectId: string }) {
               {task.content}
             </span>
             {task.assigned_to && (
-              <span className="text-xs text-dark-muted">{task.assigned_to}</span>
+              <span className="text-xs text-dark-muted flex-shrink-0 truncate max-w-[80px]">{task.assigned_to}</span>
             )}
             <button
               onClick={() => deleteTask(task.id)}
-              className="opacity-0 group-hover:opacity-100 text-dark-muted hover:text-danger transition-opacity"
+              className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 text-dark-muted hover:text-danger transition-opacity flex-shrink-0"
             >
               <X size={16} />
             </button>

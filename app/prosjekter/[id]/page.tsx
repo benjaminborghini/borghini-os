@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
               <span className="text-xs text-gold/60 bg-gold/10 px-2 py-0.5 rounded">{project.type}</span>
             </div>
             <h1 className="text-2xl font-bold text-white">{project.name}</h1>
-            <div className="flex items-center gap-4 mt-3 text-sm">
+            <div className="flex items-center gap-4 mt-3 text-sm flex-wrap gap-y-1">
               <span className={getUrgencyColor(urgency)}>{getUrgencyLabel(urgency)}</span>
               {days !== null && (
                 <span className="text-dark-muted">
@@ -118,7 +118,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
                 <p className="text-dark-muted text-xs mb-2">Kontaktpersoner</p>
                 <div className="space-y-2">
                   {contacts.map((c: Contact) => (
-                    <div key={c.id} className="flex items-center gap-2 text-sm">
+                    <div key={c.id} className="flex items-center gap-2 text-sm flex-wrap gap-y-1">
                       <span className="text-white/80">{c.name}</span>
                       <span className="text-xs text-dark-muted">· {c.role}</span>
                       {c.phone && (

@@ -38,7 +38,7 @@ export default async function PipelinePage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-y-2">
         <div>
           <h1 className="text-2xl font-bold text-white">Pipeline</h1>
           <p className="text-dark-muted text-sm mt-1">
@@ -47,10 +47,10 @@ export default async function PipelinePage() {
         </div>
       </div>
 
-      {/* Kanban-style columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
+      {/* Kanban-style columns — horizontal scroll on mobile, grid on desktop */}
+      <div className="flex gap-4 overflow-x-auto pb-2 scroll-touch lg:grid lg:grid-cols-5 lg:overflow-visible">
         {activeStatuses.map((status) => (
-          <div key={status} className="space-y-3">
+          <div key={status} className="space-y-3 min-w-[280px] lg:min-w-0 flex-shrink-0 lg:flex-shrink">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-medium text-white/80">{status}</h3>
               <span className="text-xs text-dark-muted bg-dark-card px-2 py-0.5 rounded">
